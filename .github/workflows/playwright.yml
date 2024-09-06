@@ -19,7 +19,7 @@ concurrency:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: warp-ubuntu-latest-x64-4x
 
     steps:
       - uses: actions/checkout@v4
@@ -43,3 +43,9 @@ jobs:
           name: playwright-report
           path: playwright-tests/playwright-report/
           retention-days: 7
+      - name: Create snapshot
+        uses: WarpBuilds/snapshot-save@v1
+        with:
+          alias: 'warp-snap-praj-supabase'
+          fail-on-error: true
+          wait-timeout-minutes: 60
