@@ -20,7 +20,7 @@ concurrency:
 jobs:
   test:
     timeout-minutes: 60
-    runs-on: warp-ubuntu-latest-x64-4x
+    runs-on: warp-ubuntu-latest-x64-4x;snapshot.key
 
     steps:
       - uses: actions/checkout@v4
