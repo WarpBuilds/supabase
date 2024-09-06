@@ -10,6 +10,7 @@ on:
     paths:
       - 'apps/studio/**'
       - 'package-lock.json'
+  workflow_dispatch:
 
 # Cancel old builds on new commit for same workflow + branch/PR
 concurrency:
