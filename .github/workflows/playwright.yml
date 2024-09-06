@@ -48,4 +48,4 @@ jobs:
         with:
           alias: 'warp-snap-praj-supabase'
           fail-on-error: true
-          wait-timeout-minutes: 60
+          wait-timeout-minutes: 45
