@@ -14,6 +14,7 @@ on:
     paths:
       - 'apps/studio/**'
       - 'package-lock.json'
+  workflow_dispatch:
 
 # Cancel old builds on new commit for same workflow + branch/PR
 concurrency:
@@ -23,7 +24,7 @@ concurrency:
 jobs:
   check:
     # Uses larger hosted runner as it significantly decreases build times
-    runs-on: [larger-runner-4cpu]
+    runs-on: [warp-ubuntu-latest-x64-4x]
 
     steps:
       - uses: actions/checkout@v4
@@ -45,3 +46,9 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=3072'
         run: npm run test:studio
         working-directory: ./
+      - name: Create snapshot
+        uses: WarpBuilds/snapshot-save@v1
+        with:
+          alias: 'warp-snap-praj-supabase-studio'
+          fail-on-error: true
+          wait-timeout-minutes: 45
