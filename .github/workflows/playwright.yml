@@ -31,7 +31,7 @@ jobs:
           cache: 'npm'
       - uses: supabase/setup-cli@v1
       - name: Install dependencies
-        run: npm i
+        run: npm i --no-audit
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
