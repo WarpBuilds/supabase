@@ -23,7 +23,7 @@ jobs:
     runs-on: warp-custom-snapshot-high-iops;snapshot.key=warp-snap-praj-supabase
 
     steps:
-      - uses: actions/checkout@v4
+      # - uses: actions/checkout@v4
       #   with:
       #     clean: false
       - name: Use Node.js
@@ -46,9 +46,9 @@ jobs:
           name: playwright-report
           path: playwright-tests/playwright-report/
           retention-days: 7
-      - name: Create snapshot
-        uses: WarpBuilds/snapshot-save@v1
-        with:
-          alias: 'warp-snap-praj-supabase'
-          fail-on-error: true
-          wait-timeout-minutes: 45
+      # - name: Create snapshot
+      #   uses: WarpBuilds/snapshot-save@v1
+      #   with:
+      #     alias: 'warp-snap-praj-supabase'
+      #     fail-on-error: true
+      #     wait-timeout-minutes: 45
