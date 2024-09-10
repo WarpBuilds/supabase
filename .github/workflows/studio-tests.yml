@@ -46,9 +46,9 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=3072'
         run: npm run test:studio
         working-directory: ./
-      # - name: Create snapshot
-      #   uses: WarpBuilds/snapshot-save@v1
-      #   with:
-      #     alias: 'warp-snap-praj-supabase-studio'
-      #     fail-on-error: true
-      #     wait-timeout-minutes: 45
+      - name: Create snapshot
+        uses: WarpBuilds/snapshot-save@v1
+        with:
+          alias: 'warp-snap-praj-supabase-studio'
+          fail-on-error: true
+          wait-timeout-minutes: 45
