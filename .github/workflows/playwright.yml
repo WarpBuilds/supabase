@@ -23,9 +23,9 @@ jobs:
     runs-on: warp-ubuntu-latest-x64-4x;snapshot.key=warp-snap-praj-supabase
 
     steps:
-      # - uses: actions/checkout@v4
-      - name: Pull changes
-        run: git pull
+      - uses: actions/checkout@v4
+        with:
+          clean: false
       # - name: Use Node.js
       #   uses: Warpbuilds/setup-node@v4
       #   with:
