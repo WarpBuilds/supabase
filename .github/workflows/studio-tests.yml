@@ -39,7 +39,7 @@ jobs:
           node-version-file: '.nvmrc'
           # cache: 'npm'
       - name: Install deps
-        run: npm i --no-audit
+        run: npm ci
         working-directory: ./
       - name: Run Tests
         env:
