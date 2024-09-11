@@ -25,7 +25,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          clean: false
+          clean: false    
       - name: Use Node.js
         uses: Warpbuilds/setup-node@v4
         with:
@@ -46,9 +46,9 @@ jobs:
           name: playwright-report
           path: playwright-tests/playwright-report/
           retention-days: 7
-      # - name: Create snapshot
-      #   uses: WarpBuilds/snapshot-save@v1
-      #   with:
-      #     alias: 'warp-snap-praj-supabase'
-      #     fail-on-error: true
-      #     wait-timeout-minutes: 45
+      - name: Create snapshot
+        uses: WarpBuilds/snapshot-save@v1
+        with:
+          alias: 'warp-snap-praj-supabase'
+          fail-on-error: true
+          wait-timeout-minutes: 45
