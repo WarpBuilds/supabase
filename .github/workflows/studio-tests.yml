@@ -32,7 +32,7 @@ jobs:
           sparse-checkout: |
             apps/studio
             packages
-          # clean: false
+          clean: false
       - name: Use Node.js
         uses: Warpbuilds/setup-node@v4
         with:
