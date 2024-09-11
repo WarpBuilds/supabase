@@ -23,19 +23,9 @@ jobs:
     runs-on: warp-custom-snapshot-high-iops;snapshot.key=warp-snap-praj-supabase
 
     steps:
-      # - uses: actions/checkout@v4
-      #   with:
-      #     clean: false    
-      - name: Authenticate with GitHub Token
-        run: |
-          git config --global credential.helper store
-          echo "https://${{ secrets.GITHUB_TOKEN }}@github.com" > ~/.git-credentials
-
-      - name: Pull latest changes
-        run: |
-          git pull origin ${{ github.ref_name }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v4
+        with:
+          clean: false
       - name: Use Node.js
         uses: Warpbuilds/setup-node@v4
         with:
